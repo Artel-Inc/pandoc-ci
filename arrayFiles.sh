@@ -19,6 +19,8 @@ do
 	
 	echo "Сompilation: $FILE -> $FILE_OUTPUT"
 	
+ 	git config --global --add safe.directory /github/workspace
+ 
 	if [ "$HEADERRIGHT" == "git" ]; then
 		HEADERRIGHT="Commit: `git log --date=format:'%Y%m%d%H' --pretty=tformat:"%h [%cd]" $FILE | head -n1`"
 	fi
